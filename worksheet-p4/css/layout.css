@@ -11,22 +11,37 @@
 /* Header & Navigasi */
 .kepala {
   display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
   border-bottom: 1px solid var(--color-border);
 }
 
-.tagline {
-  font-size: var(--text-lg);
-  color: var(--color-fg);
-  opacity: 0.85;
+.kepala h1 {
+  margin: 0;
 }
 
 .kepala nav ul {
   display: flex;
   list-style: none;
   gap: var(--space-md);
-  margin-top: var(--space-sm);
+  margin: 0;
+  padding: 0;
+}
+
+.tagline {
+  font-size: var(--text-sm);
+  color: var(--color-fg);
+  opacity: 0.8;
+  margin-top: var(--space-xs);
+  flex-basis: 100%; /* Turun tepat di bawah h1 jika di layar sempit */
+  order: 3;        /* Posisikan tagline di bawah */
+}
+
+.kepala nav {
+  order: 2;
+  margin-left: auto; /* Dorong menu ke pojok kanan */
 }
 
 .kepala nav a {
