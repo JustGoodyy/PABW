@@ -65,7 +65,7 @@ section {
 }
 
 .foto img {
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   object-fit: cover;
   border: 3px solid var(--color-border);
   box-shadow: var(--shadow-md);
