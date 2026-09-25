@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!--
+  KERANGKA PROFIL — PABW 2026/2027 — Pertemuan 4
+  ==================================================================
+  Berkas ini SUDAH LENGKAP dan sudah lolos W3C Nu Html Checker serta
+  Lighthouse Accessibility. JANGAN mengubah struktur, landmark, label,
+  atau alt untuk memperbaiki tampilan — tampilan diubah dari berkas CSS.
+
+  Tugas Anda di Pertemuan 4:
+    1. Ganti isi yang ditandai  [ISI]  dengan milik Anda sendiri.
+    2. Buat lima berkas CSS di folder css/ lalu buka komentar
+       lima baris <link> di bawah  (lihat Lembar D).
+    3. WAJIB — tambahkan MINIMAL TIGA bagian baru di dalam <main>,
+       masing-masing memakai elemen semantik yang belum terpakai dan
+       berbeda satu sama lain  (lihat Lembar B.3). Setiap bagian wajib
+       diberi gaya memakai token yang sama, lalu dievaluasi W3C dan WCAG.
+-->
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <!-- ISI 1 — judul tab dan hasil pencarian. Ganti dengan nama Anda. -->
+    <title>Raja Augustav Noer — PABW 2026/2027</title>
+    <meta name="description" content="Halaman profil mahasiswa PABW: tentang saya, karya, dan kontak.">
+    
+    <!-- LEMBAR D — buat lima berkas di folder css/, lalu buka komentar ini.
+        URUTAN PEMUATAN MENENTUKAN CASCADE: tokens, base, layout, komponen, tema.
+        Lapisan paling bawah menang tanpa perlu !important. -->
+        
+    <link rel="stylesheet" href="css/tema.css">
+    <link rel="stylesheet" href="css/tokens.css"> 
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/komponen.css">
+  </head>
+  <body>
+    <a class="lewati" href="#utama">Lewati ke konten utama</a>
+
+    <header class="kepala">
+      <!-- ISI 2 — nama Anda, atau nama panggilan yang Anda pakai. -->
+      <h1>Raja Augustav Noer</h1>
+      <!-- ISI 3 — satu kalimat tentang diri Anda. -->
+      <p class="tagline">Mahasiswa Informatika UII yang mencoba-coba web.</p>
+      <nav aria-label="Navigasi utama">
+        <ul>
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="#karya">Karya</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="utama">
+
+      <section id="tentang">
+        <h2>Tentang saya</h2>
+
+        <figure class="foto">
+          <!-- ISI 4 — pakai foto Anda sendiri dengan nama berkas yang sama,
+              atau biarkan berkas contoh apa adanya. -->
+          <img src="media/foto-aing.png"
+              alt="Foto profil Raja Augustav Noer."
+              width="480" height="480" loading="lazy">
+          <figcaption>Raja Augustav Noer.</figcaption>
+        </figure>
+
+        <!-- ISI 5 — dua sampai tiga kalimat: asal, minat, dan hal yang
+            sedang Anda pelajari. -->
+        <p>Saya mahasiswa Program Studi Informatika Universitas Islam Indonesia.
+          Saya tertarik pada berbagai macam bidang IT seperti Web Development, Cyber Security, dan Data Science.
+          Saya berharap dapat mengembangkan keterampilan dan pengetahuan dalam bidang-bidang tersebut.</p>
+
+        <table>
+          <!-- ISI 6 — judul tabel dan isi minimal tiga baris. -->
+          <caption>Kegiatan yang saya ikuti semester ini</caption>
+          <thead>
+            <tr>
+              <th scope="col">Kegiatan</th>
+              <th scope="col">Peran</th>
+              <th scope="col">Waktu</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Praktikum PABW</th>
+              <td>Peserta</td>
+              <td><time datetime="2026-09">September 2026</time></td>
+            </tr>
+            <tr>
+              <th scope="row">Kelas Terbuka Kampus</th>
+              <td>Peserta</td>
+              <td><time datetime="2026-10">Oktober 2026</time></td>
+            </tr>
+            <tr>
+              <th scope="row">Organisasi kemahasiswaan</th>
+              <td>Anggota</td>
+              <td><time datetime="2026">2026</time></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="karya">
+        <h2>Karya saya</h2>
+        <!-- ISI 7 — tiga karya, proyek, atau hal yang pernah Anda buat.
+            Boleh tugas kuliah, karya pribadi, atau hobi. -->
+        <ul>
+          <li>1. Halaman Kelas Terbuka Kampus — praktikum P03, HTML semantik dan form.</li>
+          <li>2. Announcement Bot Discord — pengambilan data dari website kampus dengan Discord API menggunakan web scraping.</li>
+          <li>3. Aplikasi Manajemen Bengkel — aplikasi sederhana untuk mengelola data bengkel.</li>
+        </ul>
+      </section>
+
+      <section id="kontak">
+        <h2>Hubungi saya</h2>
+        <p>Isi formulir berikut. Semua kolom bertanda wajib harus diisi.</p>
+
+        <form action="#" method="post">
+          <fieldset>
+            <legend>Data pengirim</legend>
+            
+            <p>
+              <label for="nama">Nama lengkap</label>
+              <input id="nama" name="nama" type="text"
+              autocomplete="name" required>
+            </p>
+
+            <p>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email"
+              autocomplete="email" required>
+            </p>
+            
+            <p>
+              <label for="nim">NIM</label>
+              <!-- ISI 8 — ganti angka di dalam pattern dengan NIM Anda sendiri. -->
+              <input id="nim" name="nim" type="text" inputmode="numeric"
+                    pattern="[0-9]{8}" aria-describedby="nim-bantuan" required>
+              <span id="nim-bantuan">Delapan digit angka, contoh 25523008.</span>
+            </p>
+
+            <p>
+              <label for="pesan">Pesan</label>
+              <textarea id="pesan" name="pesan" rows="4" required></textarea>
+            </p>
+            
+            <button type="submit">Kirim</button>
+          </fieldset>
+        </form>
+      </section>
+      
+      <!-- STRUKTUR TAMBAHAN (Lembar B.3) — minimal tiga bagian baru di sini,
+      sebelum tag penutup </main>. Wajib: satu <h2> per bagian, atribut id
+        yang belum terpakai, elemen semantik yang berbeda satu sama lain, dan
+        gaya memakai token yang sama. Tiga section di atas JANGAN diubah. -->
+
+        <section id="galeri">
+        <h2>Galeri Proyek</h2>
+        <ul class="daftar-galeri">
+          <li>
+            <figure>
+              <img src="media/bot-mudi.png" alt="Tangkapan layar bot Discord saat merespons perintah." style="width: 500px; height: 150px; " loading="lazy">
+              <figcaption>Antarmuka pesan dari Discord Announcement Bot.</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <img src="media/pakaroto.png" alt="Tampilan dasbor aplikasi manajemen data bengkel." style="width: 500px; height: 150px;" loading="lazy">
+              <figcaption>Dasbor manajemen transaksi aplikasi bengkel.</figcaption>
+            </figure>
+          </li>
+        </ul>
+      </section>
+
+        <section id="faq">
+          <h2>Pertanyaan Umum</h2>
+          <details>
+            <summary>Apa fokus teknologi yang sedang Anda tekuni saat ini?</summary>
+            <p>Saat ini saya sedang mendalami pengembangan antarmuka web modern, dan keamanan sistem cyber.</p>
+          </details>
+          <details>
+            <summary>Apakah terbuka untuk kolaborasi proyek?</summary>
+            <p>Ya, saya sangat terbuka untuk berdiskusi maupun berkolaborasi pada proyek web atau bot otomatisasi.</p>
+          </details>
+        </section>
+        
+        <section id="prinsip">
+          <h2>Prinsip dan Quote</h2>
+          <blockquote>
+          <p>"Just do it! Dont Think!"</p>
+          <footer>— <cite>Wise Man</cite></footer>
+        </blockquote>
+      </section>
+      
+      
+    </main>
+
+    <footer class="kaki">
+      <!-- ISI 9 — nama, NIM, tahun. -->
+      <p>Raja Augustav Noer · 25523008 · <time datetime="2026">2026</time></p>
+    </footer>
+  </body>
+</html>

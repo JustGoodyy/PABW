@@ -1,0 +1,151 @@
+/* Container Utama */
+.kepala,
+#utama,
+.kaki {
+  width: 100%;
+  max-width: 52rem; 
+  margin-inline: auto;
+  padding: var(--space-xl) var(--space-md);
+}
+
+/* Header & Navigasi */
+.kepala {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.tagline {
+  font-size: var(--text-lg);
+  color: var(--color-fg);
+  opacity: 0.85;
+}
+
+.kepala nav ul {
+  display: flex;
+  list-style: none;
+  gap: var(--space-md);
+  margin-top: var(--space-sm);
+}
+
+.kepala nav a {
+  text-decoration: none;
+  font-weight: 600;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+}
+
+.kepala nav a:hover {
+  background-color: var(--color-surface);
+}
+
+/* Konten Utama (Main) & Bagian Kartu (Section) */
+#utama {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+section {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Figure & Foto Profil */
+.foto {
+  margin: var(--space-md) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.foto img {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  max-width: 180px;
+  height: 180px;
+}
+
+figcaption {
+  font-size: var(--text-sm);
+  opacity: 0.8;
+  font-style: italic;
+}
+
+/* Tabel Kegiatan */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--space-lg);
+}
+
+caption {
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: var(--space-sm);
+  color: var(--color-primary);
+}
+
+th, td {
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+
+thead {
+  background-color: var(--color-bg);
+}
+
+/* List Karya */
+#karya ul {
+  padding-left: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/* Galeri Proyek */
+.daftar-galeri {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: var(--space-md);
+}
+
+.daftar-galeri li {
+  flex: 1 1 calc(50% - var(--space-md));
+  min-width: 240px;
+}
+
+.daftar-galeri figure {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  padding: var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.daftar-galeri img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+/* Footer */
+.kaki {
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+  font-size: var(--text-sm);
+  opacity: 0.85;
+}
