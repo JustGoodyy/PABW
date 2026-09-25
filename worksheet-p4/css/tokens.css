@@ -3,7 +3,7 @@
   --blue-100: #DBEAFE;
   --blue-500: #3B82F6;
   --blue-600: #2563EB;
-  --blue-700: #1D4ED8;
+  --blue-700: #1C4CCE;
   --blue-800: #1E40AF;
 
   --sky-400: #38BDF8;
@@ -14,14 +14,14 @@
 
   --slate-50: #F8FAFC;
   --slate-100: #F4F7FB;
-  --slate-300: #CBD5E1;
+  --slate-300: #64748B;
   --slate-400: #94A3B8;
   --slate-700: #334155;
   --slate-800: #1E293B;
   --slate-900: #0F172A;
   --slate-950: #0B1120;
 
-  --white: #FFFFFF;
+  --theme: #FFFFFF;
 
   --font-system: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --size-14: 0.875rem;
@@ -49,7 +49,7 @@
 
   --color-bg: var(--slate-100);
   --color-fg: var(--slate-900);
-  --color-surface: var(--white);
+  --color-surface: var(--theme);
   --color-border: var(--slate-300);
   --color-primary: var(--blue-700);
   --color-primary-hover: var(--blue-800);

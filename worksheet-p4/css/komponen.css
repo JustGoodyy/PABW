@@ -60,7 +60,7 @@ textarea:user-invalid {
 button[type="submit"] {
   align-self: flex-start;
   background-color: var(--color-primary);
-  color: #ffffff;
+  color: var(--theme);
   font-size: var(--text-base);
   font-weight: 600;
   padding: var(--space-sm) var(--space-xl);
