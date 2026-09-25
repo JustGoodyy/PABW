@@ -20,7 +20,7 @@ body {
   top: -999px;
   left: 1rem;
   background: var(--color-primary);
-  color: #ffffff;
+  color: var(--theme);
   padding: var(--space-sm) var(--space-md);
   border-radius: var(--radius-sm);
   z-index: 1000;

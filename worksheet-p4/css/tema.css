@@ -14,3 +14,80 @@
     --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.6);
   }
 }
+
+.wadah-tema {
+  display: flex;
+  align-items: center;
+  order: 2;
+  margin-left: auto;
+  margin-right: var(--space-md);
+}
+
+/* Sembunyikan checkbox asli tanpa mematikan navigasi keyboard */
+.input-tema {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Tampilan visual tombol pengalih */
+.tombol-tema {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  background-color: var(--color-surface);
+  color: var(--color-fg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.tombol-tema:hover {
+  border-color: var(--color-primary);
+}
+
+.input-tema:focus-visible + .tombol-tema {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+html:has(#pengalih-tema:checked) {
+  --color-bg: var(--slate-950);       /* #0B1120 */
+  --color-fg: var(--slate-50);        /* #F8FAFC */
+  --color-surface: var(--slate-800);   /* #1E293B */
+  --color-border: var(--slate-300);    /* #64748B */
+  --color-primary: var(--blue-500);    /* #3B82F6 */
+  --color-primary-hover: var(--blue-600);
+  --color-focus: var(--sky-400);       /* #38BDF8 */
+  --color-danger: var(--red-600);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Ganti teks dan ikon tombol saat dark mode aktif */
+html:has(#pengalih-tema:checked) .ikon-tema::before {
+  content: "☀️ ";
+}
+html:has(#pengalih-tema:checked) .ikon-tema {
+  font-size: 0;
+}
+html:has(#pengalih-tema:checked) .teks-tema {
+  font-size: 0;
+}
+html:has(#pengalih-tema:checked) .teks-tema::after {
+  content: "Mode Terang";
+  font-size: var(--text-sm);
+}
+
+/* Pastikan teks tombol submit tetap kontras di mode gelap */
+html:has(#pengalih-tema:checked) button[type="submit"] {
+  color: #0B1120;
+  font-weight: 700;
+}

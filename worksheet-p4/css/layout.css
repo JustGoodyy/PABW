@@ -11,15 +11,21 @@
 /* Header & Navigasi */
 .kepala {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--space-md);
+  flex-wrap: wrap;                
+  justify-content: space-between;    
+  align-items: center;               
+  gap: var(--space-sm) var(--space-md);
   border-bottom: 1px solid var(--color-border);
 }
 
 .kepala h1 {
   margin: 0;
+  order: 1;                        
+}
+
+.kepala nav {
+  order: 2;                          
+  margin-left: auto;               
 }
 
 .kepala nav ul {
@@ -28,20 +34,6 @@
   gap: var(--space-md);
   margin: 0;
   padding: 0;
-}
-
-.tagline {
-  font-size: var(--text-sm);
-  color: var(--color-fg);
-  opacity: 0.8;
-  margin-top: var(--space-xs);
-  flex-basis: 100%; /* Turun tepat di bawah h1 jika di layar sempit */
-  order: 3;        /* Posisikan tagline di bawah */
-}
-
-.kepala nav {
-  order: 2;
-  margin-left: auto; /* Dorong menu ke pojok kanan */
 }
 
 .kepala nav a {
@@ -53,6 +45,15 @@
 
 .kepala nav a:hover {
   background-color: var(--color-surface);
+}
+
+.tagline {
+  font-size: var(--text-sm);
+  color: var(--color-fg);
+  opacity: 0.85;
+  flex-basis: 100%;                
+  order: 3;                         
+  margin: 0;
 }
 
 /* Konten Utama (Main) & Bagian Kartu (Section) */
