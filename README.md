@@ -76,9 +76,7 @@ Folder `worksheet-p4/` di dalam repositori GitHub Anda sendiri, berisi
 `profil.html`, `css/`, `media/`, dan `bukti/`. Sudah di-commit dan di-push
 sebelum **pukul 23.59 hari yang sama**. Tidak ada perpanjangan.
 
-##Tujuan Tiap Bagian
-
-### Evaluasi Tujuan Bagian Tambahan
+### Tujuan Tiap Bagian
 
 1. **Bagian Galeri Proyek (`#galeri`):** Menggunakan elemen semantik `<figure>`, `<img>`, dan `<figcaption>` untuk menampilkan dokumentasi visual berupa tangkapan layar antarmuka proyek yang pernah saya kerjakan. Bagian ini ditujukan kepada calon kolaborator, rekruter, atau dosen penilai agar dapat memvalidasi wujud nyata karya secara visual tanpa hanya membaca teks deskripsi.
 
@@ -91,3 +89,4 @@ sebelum **pukul 23.59 hari yang sama**. Tidak ada perpanjangan.
 1. Brainstorming cara memaksimalkan / merapikan halaman web yang awalnya tidak terlalu rapi menjadi lebih rapi
 2. Rekomendasi kombinasi warna untuk warna yang saya pilih yaitu biru, AI membantu saya memastikan kombinasi sesuai atau lulus WCAG.
 3. Membantu ketika ada suatu error git push karena awalnya saya menggunakan directory yang berbeda dan membutuhkan bantuan AI untuk menginisialisasi ulang git ke format directory yang sesuai panduan worksheet.
+4. Membantu pengerjaan worksheet bila ada kesulitan.
