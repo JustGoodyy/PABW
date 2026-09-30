@@ -1,0 +1,37 @@
+#utama {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+
+#tentang, #karya, #kontak, #galeri, #faq, #prinsip {
+  grid-column: 1; 
+  grid-row: auto;
+}
+
+/* Tablet */
+@media (min-width: 48rem) {
+  .daftar-galeri {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop */
+@media (min-width: 60rem) {
+  #utama {
+    grid-template-columns: minmax(22rem, 1fr) 2fr;
+  }
+  
+  #tentang {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+  
+  #karya, #kontak {
+    grid-column: 2;
+  }
+  
+  #galeri, #faq, #prinsip {
+    grid-column: 1 / -1;
+  }
+}
