@@ -5,6 +5,12 @@ const profil = {
   jumlahproyek: 3,
 };
 
+const daftarProyek = [
+  { judul: "PAKAROTO", tahun: 2026, selesai: true },
+  { judul: "NGUBER", tahun: 2026, selesai: true },
+  { judul: "Buat Game", tahun: 2027, selesai: false }
+];
+
 const kalimat = `Nama saya ${profil.nama}, dan saya belajar ${profil.keahlian.length} hal.`;
 console.log(kalimat);
 
@@ -16,3 +22,12 @@ const formatKeahlian = (daftar) => daftar.join(" · ");
 
 console.log(buatPerkenalan({ nama: "Wahyu", peran: "Desainer" }));
 console.log(formatKeahlian(["ML", "CS", "Valo"]));
+
+console.table(profil.keahlian);
+console.table(daftarProyek);
+
+const selesai = daftarProyek.filter((proyek) => proyek.selesai);
+console.table(selesai);
+
+const proyekPakaroto = daftarProyek.find((proyek) => proyek.judul === "PAKAROTO");
+console.log(proyekPakaroto);
