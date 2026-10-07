@@ -6,9 +6,9 @@ const profil = {
 };
 
 export const daftarProyek = [
-  { judul: "PAKAROTO", tahun: 2026, selesai: true },
-  { judul: "NGUBER", tahun: 2026, selesai: true },
-  { judul: "Buat Game", tahun: 2027, selesai: false }
+  { judul: "PAKAROTO", kategori: "app", tahun: 2026, selesai: true },
+  { judul: "NGUBER", kategori: "app", tahun: 2026, selesai: true },
+  { judul: "Buat Game", kategori: "game", tahun: 2027, selesai: false }
 ];
 
 const proyekUrut = [...daftarProyek].sort((a, b) => b.tahun - a.tahun);
