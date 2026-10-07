@@ -5,7 +5,7 @@ const profil = {
   jumlahproyek: 3,
 };
 
-const daftarProyek = [
+export const daftarProyek = [
   { judul: "PAKAROTO", tahun: 2026, selesai: true },
   { judul: "NGUBER", tahun: 2026, selesai: true },
   { judul: "Buat Game", tahun: 2027, selesai: false }
