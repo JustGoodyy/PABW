@@ -19,6 +19,8 @@ function render(daftar) {
     return; 
   }
 
+  kosong.hidden = true;
+
   daftar.forEach((proyek) => {
     wadah.append(buatKartu(proyek));
   });
