@@ -91,3 +91,4 @@ sebelum **pukul 23.59 hari yang sama**. Tidak ada perpanjangan.
 3. Membantu ketika ada suatu error git push karena awalnya saya menggunakan directory yang berbeda dan membutuhkan bantuan AI untuk menginisialisasi ulang git ke format directory yang sesuai panduan worksheet.
 4. Membantu pengerjaan worksheet bila ada kesulitan.
 5. AI digunakan untuk membantu memahami penanganan error di JS.
+6. AI digunakan untuk membantu dalam tahap mengintegrasikan fungsi di JS agar bisa berinteraksi dengan elemen html.
