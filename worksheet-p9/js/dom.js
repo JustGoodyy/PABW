@@ -14,6 +14,11 @@ function buatKartu(proyek) {
 function render(daftar) {
   wadah.textContent = ""; 
 
+  if (daftar.length === 0) {
+    kosong.hidden = false;
+    return; 
+  }
+
   daftar.forEach((proyek) => {
     wadah.append(buatKartu(proyek));
   });
@@ -43,4 +48,75 @@ barisFilter.addEventListener("click", (event) => {
   render(terpilih);
 });
 
+const form = document.querySelector("form");
+const tombolKirim = form.querySelector("button[type='submit']");
+const semuaInput = form.querySelectorAll("input, textarea");
 
+function periksaSeluruhForm() {
+  let sah = true;
+  semuaInput.forEach((kolom) => {
+    if (kolom.value.trim() === "") {
+      sah = false;
+    }
+  });
+  tombolKirim.disabled = !sah; 
+}
+
+function aturPesanGalat(kolom, isError) {
+  const induk = kolom.parentElement; // Mengambil elemen <p> yang membungkus input
+  let pesan = induk.querySelector(".teks-galat");
+
+  if (isError) {
+    kolom.setAttribute("aria-invalid", "true"); // Tandai kolom bermasalah
+    
+    // Jika teks pesannya belum ada, kita buat baru
+    if (!pesan) {
+      pesan = document.createElement("span");
+      pesan.className = "teks-galat";
+      pesan.style.color = "var(--color-danger)"; // Pakai warna merah dari CSS Anda
+      pesan.style.fontSize = "var(--text-sm)";
+      pesan.style.display = "block";
+      pesan.textContent = "Kolom ini tidak boleh kosong atau hanya spasi."; // Pesannya menyebut cara memperbaiki
+      induk.append(pesan);
+    }
+  } else {
+    kolom.removeAttribute("aria-invalid");
+    // Hapus pesan galat dari halaman jika isinya sudah benar
+    if (pesan) pesan.remove(); 
+  }
+}
+
+semuaInput.forEach((kolom) => {
+  kolom.addEventListener("input", () => {
+    if (kolom.value.trim() === "") {
+      aturPesanGalat(kolom, true);
+    } else {
+      aturPesanGalat(kolom, false);
+    }
+    periksaSeluruhForm();
+  });
+});
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault(); 
+
+  let formSah = true;
+  let kolomFokus = null;
+
+  semuaInput.forEach((kolom) => {
+    if (kolom.value.trim() === "") {
+      aturPesanGalat(kolom, true);
+      formSah = false;
+      if (!kolomFokus) kolomFokus = kolom; 
+    }
+  });
+
+  if (!formSah) {
+    kolomFokus.focus(); 
+    return;
+  }
+
+  alert("Pesan berhasil dikirim!");
+  form.reset(); 
+  periksaSeluruhForm();
+});
