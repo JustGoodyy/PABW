@@ -63,20 +63,19 @@ function periksaSeluruhForm() {
 }
 
 function aturPesanGalat(kolom, isError) {
-  const induk = kolom.parentElement; // Mengambil elemen <p> yang membungkus input
+  const induk = kolom.parentElement; 
   let pesan = induk.querySelector(".teks-galat");
 
   if (isError) {
-    kolom.setAttribute("aria-invalid", "true"); // Tandai kolom bermasalah
+    kolom.setAttribute("aria-invalid", "true"); 
     
-    // Jika teks pesannya belum ada, kita buat baru
     if (!pesan) {
       pesan = document.createElement("span");
       pesan.className = "teks-galat";
-      pesan.style.color = "var(--color-danger)"; // Pakai warna merah dari CSS Anda
+      pesan.style.color = "var(--color-danger)"; 
       pesan.style.fontSize = "var(--text-sm)";
       pesan.style.display = "block";
-      pesan.textContent = "Kolom ini tidak boleh kosong atau hanya spasi."; // Pesannya menyebut cara memperbaiki
+      pesan.textContent = "Kolom ini tidak boleh kosong atau hanya spasi."; 
       induk.append(pesan);
     }
   } else {
@@ -116,7 +115,6 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
-  alert("Pesan berhasil dikirim!");
   form.reset(); 
   periksaSeluruhForm();
 });
