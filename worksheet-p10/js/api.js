@@ -1,4 +1,4 @@
-const ALAMAT = 'https://jsonplaceholder.typicode.com/users';
+const ALAMAT = 'notisia.json';
 
 export async function ambilDataUsers() { 
       try {
