@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "agenda": "Pengumuman Jadwal Ujian PABW",
+    "penulis": {
+      "nama": "Pak Dosen",
+      "ruangan": "Lab Komputer 1"
+    },
+    "tag": ["ujian", "penting", "semester-gasal"],
+    "penting": true
+  },
+  {
+    "agenda": "Libur Nasional Akhir Bulan",
+    "penulis": {
+      "nama": "Admin Akademik",
+      "ruangan": "Gedung Rektorat"
+    },
+    "tag": ["libur", "info"],
+    "penting": false
+  }
+]

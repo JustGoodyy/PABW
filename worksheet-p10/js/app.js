@@ -51,7 +51,7 @@ function gambar(daftar) {
         kartu.className = 'kartu-info'; 
 
         const judul = document.createElement('h3');
-        judul.textContent = item.Agenda;
+        judul.textContent = item.agenda;
 
         const infoPenulis = document.createElement('p');
         infoPenulis.textContent = `Oleh: ${item.penulis.nama} (${item.penulis.ruangan})`;
