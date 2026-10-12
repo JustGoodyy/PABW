@@ -41,15 +41,44 @@
 
 import { ambilDataUsers } from './api.js';
 
-async function jalankan() {
-    const wadah = document.querySelector('#daftar') || document.body; 
+const wadah = document.querySelector('#daftar');
+
+function gambar(daftar) {
+    wadah.textContent = '';
+    
+    daftar.forEach(function (item) {
+        const kartu = document.createElement('article');
+        kartu.className = 'kartu-info'; 
+
+        const judul = document.createElement('h3');
+        judul.textContent = item.Agenda;
+
+        const infoPenulis = document.createElement('p');
+        infoPenulis.textContent = `Oleh: ${item.penulis.nama} (${item.penulis.ruangan})`;
+
+        kartu.appendChild(judul);
+        kartu.appendChild(infoPenulis);
+
+        wadah.appendChild(kartu);
+    });
+}
+
+async function tampilkan() {
+    wadah.textContent = 'Memuat data...';
     
     try {
-        const data = await ambilDataUsers();
-        console.log("Data berhasil diambil:", data);
+        const daftar = await ambilDataUsers();
+
+        if (daftar.length === 0) {
+            wadah.textContent = 'Belum ada notisia.';
+            return;
+        }
+
+        gambar(daftar);
+        
     } catch (galat) {
         wadah.textContent = 'Gagal memuat data: ' + galat.message;
     }
 }
 
-jalankan();
+tampilkan();
