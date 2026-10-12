@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="Halaman profil mahasiswa PABW: tentang saya, karya, dan kontak.">
+
+    <title>Raja Augustav Noer — PABW 2026/2027</title>
+    
+    <link rel="stylesheet" href="css/tema.css">
+    <link rel="stylesheet" href="css/tokens.css"> 
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/komponen.css">
+    <link rel="stylesheet" href="css/responsif.css">
+  </head>
+  <body>
+    <a class="lewati" href="#utama">Lewati ke konten utama</a>
+
+    <header class="kepala">
+      <h1>Raja Augustav Noer</h1>
+      <p class="tagline">Mahasiswa Informatika UII yang mencoba-coba web.</p>
+
+    <div class="wadah-tema">
+      <input type="checkbox" id="pengalih-tema" class="input-tema" aria-label="Ganti tema terang atau gelap">
+      <label for="pengalih-tema" class="tombol-tema">
+        <span class="ikon-tema" aria-hidden="true">🌙</span>
+        <span class="teks-tema">Mode Gelap</span>
+      </label>
+    </div>
+
+      <nav aria-label="Navigasi utama">
+        <ul>
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="#karya">Karya</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="utama">
+
+      <section id="tentang">
+        <h2>Tentang saya</h2>
+
+        <figure class="foto">
+          <img src="media/foto-aing.png"
+              alt="Foto profil Raja Augustav Noer."
+              width="480" height="480" loading="lazy">
+          <figcaption>Raja Augustav Noer.</figcaption>
+        </figure>
+
+        <p>Saya mahasiswa Program Studi Informatika Universitas Islam Indonesia.
+          Saya tertarik pada berbagai macam bidang IT seperti Web Development, Cyber Security, dan Data Science.
+          Saya berharap dapat mengembangkan keterampilan dan pengetahuan dalam bidang-bidang tersebut.</p>
+
+        <table>
+          <caption>Kegiatan yang saya ikuti semester ini</caption>
+          <thead>
+            <tr>
+              <th scope="col">Kegiatan</th>
+              <th scope="col">Peran</th>
+              <th scope="col">Waktu</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Praktikum PABW</th>
+              <td>Peserta</td>
+              <td><time datetime="2026-09">September 2026</time></td>
+            </tr>
+            <tr>
+              <th scope="row">Kelas Terbuka Kampus</th>
+              <td>Peserta</td>
+              <td><time datetime="2026-10">Oktober 2026</time></td>
+            </tr>
+            <tr>
+              <th scope="row">Organisasi kemahasiswaan</th>
+              <td>Anggota</td>
+              <td><time datetime="2026">2026</time></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="karya">
+        <h2>Karya saya</h2>
+        <ul>
+          <li>Halaman Kelas Terbuka Kampus — praktikum P03, HTML semantik dan form.</li>
+          <li>Announcement Bot Discord — pengambilan data dari website kampus dengan Discord API menggunakan web scraping.</li>
+          <li>Aplikasi Manajemen Bengkel — aplikasi sederhana untuk mengelola data bengkel.</li>
+        </ul>
+      </section>
+
+      <section id="kontak">
+        <h2>Hubungi saya</h2>
+        <p>Isi formulir berikut. Semua kolom bertanda wajib harus diisi.</p>
+
+        <form action="#" method="post">
+          <fieldset>
+            <legend>Data pengirim</legend>
+            
+            <p>
+              <label for="nama">Nama lengkap</label>
+              <input id="nama" name="nama" type="text"
+              autocomplete="name" required>
+            </p>
+
+            <p>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email"
+              autocomplete="email" required>
+            </p>
+            
+            <p>
+              <label for="nim">NIM</label>
+              <!-- ISI 8 — ganti angka di dalam pattern dengan NIM Anda sendiri. -->
+              <input id="nim" name="nim" type="text" inputmode="numeric"
+                    pattern="[0-9]{8}" aria-describedby="nim-bantuan" required>
+                <span id="nim-bantuan">Delapan digit angka, contoh 25523008.</span>
+            </p>
+
+            <p>
+              <label for="pesan">Pesan</label>
+              <textarea id="pesan" name="pesan" rows="4" required></textarea>
+            </p>
+            
+            <button type="submit">Kirim</button>
+          </fieldset>
+        </form>
+      </section>
+
+      <section id="galeri">
+        <h2>Galeri Proyek</h2>
+        <div id="filter">
+          <button data-kategori="semua" class="aktif">Semua</button>
+          <button data-kategori="app">App</button>
+          <button data-kategori="web">Web</button>
+          <button data-kategori="game">Game</button>
+        </div>
+
+        <ul id="daftar"></ul>
+        <p id="pesan-kosong" hidden>Tidak ada proyek pada kategori itu.</p>
+
+        <ul class="daftar-galeri">
+          <li>
+            <figure>
+              <img src="media/bot-mudi.png" alt="Tangkapan layar bot Discord saat merespons perintah." loading="lazy">
+              <figcaption>Antarmuka pesan dari Discord Announcement Bot.</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <img src="media/pakaroto.png" alt="Tampilan dasbor aplikasi manajemen data bengkel." loading="lazy">
+              <figcaption>Dasbor manajemen transaksi aplikasi bengkel.</figcaption>
+            </figure>
+          </li>
+        </ul>
+      </section>
+
+      <section id="faq">
+        <h2>Pertanyaan Umum</h2>
+        <details>
+          <summary>Apa fokus teknologi yang sedang Anda tekuni saat ini?</summary>
+          <p>Saat ini saya sedang mendalami pengembangan antarmuka web modern, dan keamanan sistem cyber.</p>
+         </details>
+        <details>
+          <summary>Apakah terbuka untuk kolaborasi proyek?</summary>
+           <p>Ya, saya sangat terbuka untuk berdiskusi maupun berkolaborasi pada proyek web atau bot otomatisasi.</p>
+        </details>
+      </section>
+        
+      <section id="prinsip">
+        <h2>Prinsip dan Quote</h2>
+        <blockquote>
+          <p>"Just do it! Dont Think!"</p>
+          <footer>— <cite>Wise Man</cite></footer>
+        </blockquote>
+      </section>
+      
+      
+    </main>
+
+    <footer class="kaki">
+      <p>Raja Augustav Noer · 25523008 · <time datetime="2026">2026</time></p>
+    </footer>
+
+    <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/dom.js"></script>
+  </body>
+</html>
