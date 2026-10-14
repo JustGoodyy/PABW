@@ -12,8 +12,8 @@ export const daftarProyek = [
 ];
 
 
-function buatPerkenalan({ nama, peran }) {
+export function buatPerkenalan({ nama, peran }) {
   return `${nama} — ${peran}`;
 }
 
-const formatKeahlian = (daftar) => daftar.join(" · ");
+export const formatKeahlian = (daftar) => daftar.join(" · ");
