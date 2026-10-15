@@ -29,9 +29,9 @@ export function saring(state) {
 }
 
 export function render(state) {
-  tandaiTombolAktif(state.kategoriAktif);
-
   wadah.textContent = ""; 
+  
+  tandaiTombolAktif(state.kategoriAktif);
 
   const tampil = saring(state); 
 
@@ -41,7 +41,6 @@ export function render(state) {
   }
 
   kosong.hidden = true;
-
   tampil.forEach((item) => wadah.append(buatKartu(item)));
 }
 

@@ -8,3 +8,4 @@ render(state);
 
 window.state = state;
 window.muat = muat;
+window.render = render;
