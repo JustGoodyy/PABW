@@ -92,3 +92,7 @@ sebelum **pukul 23.59 hari yang sama**. Tidak ada perpanjangan.
 4. Membantu pengerjaan worksheet bila ada kesulitan.
 5. AI digunakan untuk membantu memahami penanganan error di JS.
 6. AI digunakan untuk membantu dalam tahap mengintegrasikan fungsi di JS agar bisa berinteraksi dengan elemen html.
+
+### Versi npm dan node
+npm: 12.1.0
+node: v24.18.0
