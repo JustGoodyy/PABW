@@ -6,9 +6,9 @@ export const profil = {
 };
 
 export const daftarProyek = [
-  { judul: "PAKAROTO", kategori: "app", tahun: 2026, selesai: true },
-  { judul: "NGUBER", kategori: "app", tahun: 2026, selesai: true },
-  { judul: "Buat Game", kategori: "game", tahun: 2027, selesai: false }
+  { id: 1, judul: "PAKAROTO", kategori: "app", tahun: 2026, selesai: true },
+  { id: 2, judul: "NGUBER", kategori: "app", tahun: 2026, selesai: true },
+  { id: 3, judul: "Buat Game", kategori: "game", tahun: 2027, selesai: false }
 ];
 
 
