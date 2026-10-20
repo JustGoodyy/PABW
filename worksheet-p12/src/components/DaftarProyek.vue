@@ -1,19 +1,26 @@
 <script setup>
-defineProps({
-  daftar: {
-    type: Array,
-    required: true
-  }
-})
+import { computed } from 'vue';
+import { state } from '../state.js';
+
+const daftarTersaring = computed(() =>
+  state.daftarProyek.filter(
+    (p) => state.kategoriAktif === 'semua' || p.kategori === state.kategoriAktif
+  )
+);
 </script>
 
 <template>
-  <div>
-    <ul id="daftar">
-      <li v-for="proyek in daftar" :key="proyek.id" class="kartu">
-        {{ proyek.judul }}
-      </li>
-    </ul>
-    <p id="pesan-kosong" v-if="daftar.length === 0">Tidak ada proyek pada kategori itu.</p>
-  </div>
+  <p v-if="daftarTersaring.length === 0" id="pesan-kosong">
+    Tidak ada proyek pada kategori itu.
+  </p>
+
+  <ul v-else id="daftar">
+    <li
+      v-for="proyek in daftarTersaring"
+      :key="proyek.id"
+      class="kartu"
+    >
+      {{ proyek.judul }}
+    </li>
+  </ul>
 </template>

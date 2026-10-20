@@ -1,27 +1,27 @@
 <!-- src/App.vue -->
 <script setup>
-import { ref, computed } from 'vue'
-import { profil, daftarProyek } from './data.js'
+import { onMounted, watch } from 'vue';
+import { profil } from './data.js';
+import { state } from './state.js';
+import { simpan, muat, aturUlang } from './simpanan.js';
+
 import KepalaProfil from './components/KepalaProfil.vue'
 import TombolFilter from './components/TombolFilter.vue'
 import DaftarProyek from './components/DaftarProyek.vue'
 import FormKontak from './components/FormKontak.vue'
 
-const kategoriAktif = ref('semua')
+onMounted(() => {
+  const simpanan = muat();
+  state.kategoriAktif = simpanan?.kategoriAktif ?? 'semua';
+});
 
-const daftarTersaring = computed(() => {
-  if (kategoriAktif.value === 'semua') {
-    return daftarProyek
-  }
-  return daftarProyek.filter(p => p.kategori === kategoriAktif.value)
-})
-
-function gantiKategori(kategori) {
-  kategoriAktif.value = kategori
-}
+watch(state, (nilaiTerbaru) => {
+  simpan(nilaiTerbaru);
+}, { deep: true });
 
 function aturUlangPilihan() {
-  kategoriAktif.value = 'semua'
+  aturUlang();
+  state.kategoriAktif = 'semua';
 }
 </script>
 
@@ -54,13 +54,13 @@ function aturUlangPilihan() {
     <section id="galeri">
       <h2>Galeri Proyek</h2>
       
-      <TombolFilter :kategoriAktif="kategoriAktif" @pilih="gantiKategori" />
+      <TombolFilter/>
 
       <p>
         <button type="button" id="atur-ulang" @click="aturUlangPilihan">Atur Ulang</button>
       </p>
 
-      <DaftarProyek :daftar="daftarTersaring" />
+      <DaftarProyek/>
     </section>
   </main>
 
